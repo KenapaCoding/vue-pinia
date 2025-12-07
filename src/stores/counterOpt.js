@@ -6,11 +6,11 @@ export const useCounterOptStore = defineStore('counterop', {
         count : 0
     }),
     getters: {
-        double(state){
+        doubleCount(state){
             return state.count*2
         }
     },
-    action:{
+    actions:{
         increment(){
             this.count++
         }

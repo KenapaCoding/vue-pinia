@@ -1,11 +1,16 @@
-<script setup></script>
+<script setup>
+import { useCounterStore } from './stores/counter';
+import { useCounterOptStore } from './stores/counterOpt';
+
+const counter = useCounterOptStore();
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <h3>count : {{ counter.count }}</h3>
+    <h3>double count : {{ counter.doubleCount }}</h3>
+    <button @click="counter.increment">Increse</button>
+  </div>
 </template>
 
 <style scoped></style>
