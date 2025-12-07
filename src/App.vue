@@ -16,6 +16,14 @@ function handleClick () {
   })
 }
 
+counter.$subscribe((mutation, state)=>{
+  console.log("Mutasi : ", mutation)
+  console.log("State Baru : ", state)
+
+  localStorage.setItem('counter', JSON.stringify(state))
+
+})
+
 </script>
 
 <template>
